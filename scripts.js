@@ -12,8 +12,42 @@ Implement a stack that has the following methods:
 Each method should run in constant time.
 */
 
+class StackNode {
+  constructor(name='null') {
+    this.name = name;
+    this.stack = [];
+  }
 
+  push(newItem) {
+    this.stack.push(newItem);
+    return this.stack.length;
+  }
 
+  pop() {
+    if (this.stack.length = 0) {
+      return null
+    } else {
+      let top = this.stack[this.stack.length-1]
+      this.stack.pop()
+      return top;
+    }
+  }
+
+  max() {
+    return Math.max(this.stack);
+  }
+}
+
+let myStack = new StackNode('stackOne')
+myStack.push(1)
+myStack.push(2)
+myStack.push(3)
+myStack.push(4)
+console.log(myStack)
+console.log('max is: ', myStack.max())
+myStack.pop()
+console.log(myStack)
+console.log('max is: ', myStack.max())
 
 $(document).ready(function() {
   $('#button1').click(function(){
