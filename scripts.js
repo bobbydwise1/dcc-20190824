@@ -24,7 +24,7 @@ class StackNode {
   }
 
   pop() {
-    if (this.stack.length = 0) {
+    if (this.stack.length == 0) {
       return null
     } else {
       let top = this.stack[this.stack.length-1]
@@ -34,7 +34,11 @@ class StackNode {
   }
 
   max() {
-    return Math.max(this.stack);
+    if (this.stack.length == 0) {
+      return null
+    } else {
+      return Math.max(...this.stack);
+    }
   }
 }
 
@@ -50,8 +54,8 @@ console.log(myStack)
 console.log('max is: ', myStack.max())
 
 $(document).ready(function() {
-  $('#button1').click(function(){
-    value1 = $('#input1-section-1').value();
-    $('#output-section-0').text(1)
+  // $('#button1').click(function(){
+  //   value1 = $('#input1-section-1').value();
+  //   $('#output-section-0').text(1)
   })
 });
